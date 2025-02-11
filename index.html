@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Local search app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoianVsaWV2dSIsImEiOiJjbTFvb2xxNWEwMDR3MnFvbmdqd2NrNHI1In0.E-O7pFKamdM9m0XSJuarHQ';
+      const map = new mapboxgl.Map({
+          container: 'map', // Container ID
+          style: 'mapbox://styles/julievu/cm6tu7uoa002n01so1g6ggsgi', // Julie Vu Custom map style
+          center: [-122.3080, 47.6541], // Starting position [lng, lat]
+          zoom: 11 // Starting zoom level
+        });
+    
+        const marker = new mapboxgl.Marker() // initialize a new marker
+            .setLngLat([-122.30633851613804, 47.65624422139449]) // Marker [lng, lat] coordinates
+            .addTo(map); // Add the marker to the map
+    </script>
+  </body>
+</html>
